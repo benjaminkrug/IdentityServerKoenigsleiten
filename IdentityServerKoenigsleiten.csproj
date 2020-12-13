@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>9cdc318a-3677-44b3-9679-d97a41f5347d</UserSecretsId>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <DelaySign>true</DelaySign>
     <AssemblyOriginatorKeyFile>is_cret.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
