@@ -74,8 +74,8 @@ namespace IdentityServerKoenigsleiten
                 //.AddSigningCredential(certificate);
                 .AddInMemoryApiResources(Configuration.GetApis())
                 .AddInMemoryIdentityResources(Configuration.GetIdentityResources())
-                .AddInMemoryClients(Configuration.GetClients())
-                .AddDeveloperSigningCredential();
+                .AddInMemoryClients(Configuration.GetClients());
+                //.AddDeveloperSigningCredential();
 
             services.AddAuthentication();
             //    .AddFacebook(config =>
