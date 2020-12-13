@@ -58,8 +58,23 @@ namespace IdentityServerKoenigsleiten
 
             var assembly = typeof(Startup).Assembly.GetName().Name;
 
-            var file = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
-            var certificate = new X509Certificate2(file, "password");
+            X509Certificate2 certificate;
+            if (_env.IsDevelopment())
+            {
+                var file = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
+                certificate = new X509Certificate2(file, "password");
+            }
+            else
+            {
+                X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
+                X509Certificate2Collection certCollection = certStore.Certificates.Find(
+                                            X509FindType.FindByThumbprint,
+                                            "FE1A8F62DAB5AB8EC767A2A70178BA790A427546",
+                                            false);
+                // Get the first cert with the thumbprint
+                certificate = (X509Certificate2)certCollection.OfType<X509Certificate>().FirstOrDefault();
+
+            }
 
             services.AddIdentityServer()
                 .AddAspNetIdentity<IdentityUser>()
