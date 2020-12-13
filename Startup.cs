@@ -66,14 +66,21 @@ namespace IdentityServerKoenigsleiten
             }
             else
             {
+                var certThumbprint = "FE1A8F62DAB5AB8EC767A2A70178BA790A427546";
                 X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
                 X509Certificate2Collection certCollection = certStore.Certificates.Find(
                                             X509FindType.FindByThumbprint,
-                                            "FE1A8F62DAB5AB8EC767A2A70178BA790A427546",
+                                            certThumbprint,
                                             false);
                 // Get the first cert with the thumbprint
-                certificate = (X509Certificate2)certCollection.OfType<X509Certificate2>().FirstOrDefault();
+                var cert = certCollection.OfType<X509Certificate>().FirstOrDefault();
 
+                Console.WriteLine(cert);
+                certificate = (X509Certificate2)cert;
+                Console.WriteLine(certificate.FriendlyName);
+
+                if (certificate is null)
+                    throw new Exception($"Certificate with thumbprint {certThumbprint} was not found");
             }
 
             services.AddIdentityServer()
