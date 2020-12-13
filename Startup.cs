@@ -58,30 +58,30 @@ namespace IdentityServerKoenigsleiten
 
             var assembly = typeof(Startup).Assembly.GetName().Name;
 
-            X509Certificate2 certificate;
-            if (_env.IsDevelopment())
-            {
-                var file = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
-                certificate = new X509Certificate2(file, "password");
-            }
-            else
-            {
-                var certThumbprint = "FE1A8F62DAB5AB8EC767A2A70178BA790A427546";
-                X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
-                X509Certificate2Collection certCollection = certStore.Certificates.Find(
-                                            X509FindType.FindByThumbprint,
-                                            certThumbprint,
-                                            false);
-                // Get the first cert with the thumbprint
-                var cert = certCollection.OfType<X509Certificate>().FirstOrDefault();
+            //X509Certificate2 certificate;
+            //if (_env.IsDevelopment())
+            //{
+            //    var file = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
+            //    certificate = new X509Certificate2(file, "password");
+            //}
+            //else
+            //{
+            //    var certThumbprint = "FE1A8F62DAB5AB8EC767A2A70178BA790A427546";
+            //    X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser);
+            //    X509Certificate2Collection certCollection = certStore.Certificates.Find(
+            //                                X509FindType.FindByThumbprint,
+            //                                certThumbprint,
+            //                                false);
+            //    // Get the first cert with the thumbprint
+            //    var cert = certCollection.OfType<X509Certificate>().FirstOrDefault();
 
-                Console.WriteLine(cert);
-                certificate = (X509Certificate2)cert;
-                Console.WriteLine(certificate.FriendlyName);
+            //    Console.WriteLine(cert);
+            //    certificate = (X509Certificate2)cert;
+            //    Console.WriteLine(certificate.FriendlyName);
 
-                if (certificate is null)
-                    throw new Exception($"Certificate with thumbprint {certThumbprint} was not found");
-            }
+            //    if (certificate is null)
+            //        throw new Exception($"Certificate with thumbprint {certThumbprint} was not found");
+            //}
 
             services.AddIdentityServer()
                 .AddAspNetIdentity<IdentityUser>()
@@ -97,8 +97,8 @@ namespace IdentityServerKoenigsleiten
                 //})
                 .AddInMemoryApiResources(Configuration.GetApis())
                 .AddInMemoryIdentityResources(Configuration.GetIdentityResources())
-                .AddInMemoryClients(Configuration.GetClients())
-                .AddSigningCredential(certificate);
+                .AddInMemoryClients(Configuration.GetClients());
+                //.AddSigningCredential(certificate);
                 //.AddDeveloperSigningCredential();
 
             services.AddAuthentication();
