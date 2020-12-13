@@ -72,7 +72,7 @@ namespace IdentityServerKoenigsleiten
                                             "FE1A8F62DAB5AB8EC767A2A70178BA790A427546",
                                             false);
                 // Get the first cert with the thumbprint
-                certificate = (X509Certificate2)certCollection.OfType<X509Certificate>().FirstOrDefault();
+                certificate = (X509Certificate2)certCollection.OfType<X509Certificate2>().FirstOrDefault();
 
             }
 
