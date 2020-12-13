@@ -12,7 +12,9 @@ namespace IdentityServerKoenigsleiten
     using Microsoft.Extensions.Hosting;
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
+    using System.Security.Cryptography.X509Certificates;
     using System.Threading.Tasks;
 
     public class Startup
@@ -56,8 +58,8 @@ namespace IdentityServerKoenigsleiten
 
             var assembly = typeof(Startup).Assembly.GetName().Name;
 
-            //var file = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
-            //var certificate = new X509Certificate2(file, "password");
+            var file = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
+            var certificate = new X509Certificate2(file, "password");
 
             services.AddIdentityServer()
                 .AddAspNetIdentity<IdentityUser>()
@@ -71,10 +73,10 @@ namespace IdentityServerKoenigsleiten
                 //    options.ConfigureDbContext = b => b.UseSqlServer(connectionString,
                 //        sql => sql.MigrationsAssembly(assembly));
                 //})
-                //.AddSigningCredential(certificate);
                 .AddInMemoryApiResources(Configuration.GetApis())
                 .AddInMemoryIdentityResources(Configuration.GetIdentityResources())
-                .AddInMemoryClients(Configuration.GetClients());
+                .AddInMemoryClients(Configuration.GetClients())
+                .AddSigningCredential(certificate);
                 //.AddDeveloperSigningCredential();
 
             services.AddAuthentication();
