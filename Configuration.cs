@@ -1,5 +1,6 @@
 ﻿namespace IdentityServer
 {
+    using IdentityModel;
     using IdentityServer4;
     using IdentityServer4.Models;
     using System.Collections.Generic;
@@ -27,6 +28,30 @@
 
         public static IEnumerable<Client> GetClients() =>
             new List<Client> {
+                new Client
+                {
+                    ClientId = "client_id_mvc",
+                    ClientSecrets = { new Secret("client_secret_mvc".ToSha256())},
+
+                    AllowedGrantTypes = GrantTypes.Code,
+
+                    RedirectUris = { "https://koenigsleitenapi.azurewebsites.net/signin-oidc" },
+                    PostLogoutRedirectUris = { "https://koenigsleitenapi.azurewebsites.net/Home/Index" },
+
+                    AllowedScopes = {
+                        "ApiOne", "ApiTwo",
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "rc.scope"
+                    },
+
+                    // puts all the claims in the id token
+                    // AlwaysIncludeUserClaimsInIdToken = true,
+                    AllowOfflineAccess = true,
+
+                    RequireConsent = false
+
+                },
                 new Client
                 {
                     ClientId = "client_id_js",
