@@ -59,7 +59,7 @@ namespace IdentityServerKoenigsleiten
             var assembly = typeof(Startup).Assembly.GetName().Name;
 
             X509Certificate2 certificate;
-            if (_env.IsDevelopment())
+            if (!_env.IsDevelopment())
             {
                 var file = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
                 certificate = new X509Certificate2(file, "password");
