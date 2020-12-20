@@ -41,7 +41,7 @@
                     PostLogoutRedirectUris = { "https://koenigsleitenapi.azurewebsites.net/Home/Index" },
 
                     AllowedScopes = {
-                        "ApiOne", "ApiTwo",
+                        "ApiOne",
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         "rc.scope"
