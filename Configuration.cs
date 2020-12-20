@@ -35,6 +35,8 @@
 
                     AllowedGrantTypes = GrantTypes.Code,
 
+                    RequirePkce = true,
+
                     RedirectUris = { "https://koenigsleitenapi.azurewebsites.net/signin-oidc" },
                     PostLogoutRedirectUris = { "https://koenigsleitenapi.azurewebsites.net/Home/Index" },
 
