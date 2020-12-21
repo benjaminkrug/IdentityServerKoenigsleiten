@@ -108,8 +108,8 @@ namespace IdentityServerKoenigsleiten
                 })
                 .AddInMemoryApiResources(Configuration.GetApis())
                 .AddInMemoryIdentityResources(Configuration.GetIdentityResources())
-                .AddInMemoryClients(Configuration.GetClients());
-//                .AddSigningCredential(certificate);
+                .AddInMemoryClients(Configuration.GetClients())
+                .AddSigningCredential(certificate);
                 //.AddDeveloperSigningCredential();
 
             services.AddAuthentication();
