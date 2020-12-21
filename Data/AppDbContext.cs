@@ -1,4 +1,4 @@
-﻿namespace identityServer.Data
+﻿namespace IdentityServerKoenigsleiten.Data
 {
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;

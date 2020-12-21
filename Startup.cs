@@ -1,7 +1,7 @@
 namespace IdentityServerKoenigsleiten
 {
-    using identityServer.Data;
     using IdentityServer;
+    using IdentityServerKoenigsleiten.Data;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -30,12 +30,19 @@ namespace IdentityServerKoenigsleiten
 
         public void ConfigureServices(IServiceCollection services)
         {
-            var connectionString = _config.GetConnectionString("DefaultConnection");
+            var connectionString = "";
+            if (_env.IsDevelopment())
+            {
+                connectionString = _config.GetConnectionString("LocalConnection");
+            }
+            else
+            {
+                connectionString = _config.GetConnectionString("DefaultConnection");
+            }
 
             services.AddDbContext<AppDbContext>(config =>
             {
-                //config.UseSqlServer(connectionString); in postgresql ändern
-                config.UseInMemoryDatabase("Memory");
+                config.UseNpgsql(connectionString);
             });
 
             //AddIdentity register the services
@@ -56,53 +63,53 @@ namespace IdentityServerKoenigsleiten
                 config.LogoutPath = "/Auth/Logout";
             });
 
-            var assembly = typeof(Startup).Assembly.GetName().Name;
+            X509Certificate2 certificate;
+            if (_env.IsDevelopment())
+            {
+                var file = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
+                certificate = new X509Certificate2(file, "password");
+            }
+            else
+            {
+                var certThumbprint = "FE1A8F62DAB5AB8EC767A2A70178BA790A427546";
+                using (X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+                {
 
-            //X509Certificate2 certificate;
-            //if (!_env.IsDevelopment())
-            //{
-            //    var file = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
-            //    certificate = new X509Certificate2(file, "password");
-            //}
-            //else
-            //{
-            //    var certThumbprint = "FE1A8F62DAB5AB8EC767A2A70178BA790A427546";
-            //    using (X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
-            //    {
-                    
-            //        X509Certificate2Collection certCollection = certStore.Certificates.Find(
-            //                                    X509FindType.FindByThumbprint,
-            //                                    certThumbprint,
-            //                                    false);
-            //        // Get the first cert with the thumbprint
-            //        var cert = certCollection.OfType<X509Certificate>().FirstOrDefault();
+                    X509Certificate2Collection certCollection = certStore.Certificates.Find(
+                                                X509FindType.FindByThumbprint,
+                                                certThumbprint,
+                                                false);
+                    // Get the first cert with the thumbprint
+                    var cert = certCollection.OfType<X509Certificate>().FirstOrDefault();
 
-            //        Console.WriteLine(cert);
-            //        certificate = (X509Certificate2)cert;
-            //        Console.WriteLine(certificate.FriendlyName);
+                    Console.WriteLine(cert);
+                    certificate = (X509Certificate2)cert;
+                    Console.WriteLine(certificate.FriendlyName);
 
-            //        if (certificate is null)
-            //            throw new Exception($"Certificate with thumbprint {certThumbprint} was not found");
-            //    }
-                
-            //}
+                    if (certificate is null)
+                        throw new Exception($"Certificate with thumbprint {certThumbprint} was not found");
+                }
+
+            }
+
+            var assembly = typeof(Startup).Assembly.GetName().Name;//"Company.Identity.Data";// typeof(Startup).Assembly.GetName().Name;
 
             services.AddIdentityServer()
                 .AddAspNetIdentity<IdentityUser>()
-                //.AddConfigurationStore(options =>
-                //{
-                //    options.ConfigureDbContext = b => b.UseSqlServer(connectionString,
-                //        sql => sql.MigrationsAssembly(assembly));
-                //})
-                //.AddOperationalStore(options =>
-                //{
-                //    options.ConfigureDbContext = b => b.UseSqlServer(connectionString,
-                //        sql => sql.MigrationsAssembly(assembly));
-                //})
+                .AddConfigurationStore(options =>
+                {
+                    options.ConfigureDbContext = b => b.UseNpgsql(connectionString,
+                        sql => sql.MigrationsAssembly(assembly));
+                })
+                .AddOperationalStore(options =>
+                {
+                    options.ConfigureDbContext = b => b.UseNpgsql(connectionString,
+                        sql => sql.MigrationsAssembly(assembly));
+                })
                 .AddInMemoryApiResources(Configuration.GetApis())
                 .AddInMemoryIdentityResources(Configuration.GetIdentityResources())
                 .AddInMemoryClients(Configuration.GetClients());
-                //.AddSigningCredential(certificate);
+//                .AddSigningCredential(certificate);
                 //.AddDeveloperSigningCredential();
 
             services.AddAuthentication();

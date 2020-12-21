@@ -69,6 +69,12 @@ D:\privateWork\repo\Königsleiten 2\VueCoreTest\IdentityServerKoenigsleiten\obj\
 D:\privateWork\repo\Königsleiten 2\VueCoreTest\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.genruntimeconfig.cache
 D:\privateWork\repo\Königsleiten 2\VueCoreTest\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.csprojAssemblyReference.cache
 D:\privateWork\repo\Königsleiten 2\VueCoreTest\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.AssemblyInfoInputs.cache
+D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.AssemblyInfo.cs
+D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.csproj.CoreCompileInputs.cache
+D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.MvcApplicationPartsAssemblyInfo.cache
+D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.RazorAssemblyInfo.cache
+D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.RazorAssemblyInfo.cs
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\appsettings.json
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.exe
@@ -89,39 +95,18 @@ D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcore
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.csprojAssemblyReference.cache
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.AssemblyInfoInputs.cache
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.AssemblyInfo.cs
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.csproj.CoreCompileInputs.cache
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.MvcApplicationPartsAssemblyInfo.cache
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.RazorAssemblyInfo.cache
-D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.RazorAssemblyInfo.cs
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\staticwebassets\IdentityServerKoenigsleiten.StaticWebAssets.Manifest.cache
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\staticwebassets\IdentityServerKoenigsleiten.StaticWebAssets.xml
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\scopedcss\bundle\IdentityServerKoenigsleiten.styles.css
@@ -140,3 +125,6 @@ D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcore
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.dll
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.pdb
 D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.genruntimeconfig.cache
+D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\obj\Debug\netcoreapp3.1\IdentityServerKoenigsleiten.csprojAssemblyReference.cache
+D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Npgsql.dll
+D:\privateWork\repo\Tests\Examples\IdentityServerKoenigsleiten\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.dll
