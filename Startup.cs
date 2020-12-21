@@ -84,7 +84,6 @@ namespace IdentityServerKoenigsleiten
 
                     Console.WriteLine(cert);
                     certificate = (X509Certificate2)cert;
-                    Console.WriteLine(certificate.FriendlyName);
 
                     if (certificate is null)
                         throw new Exception($"Certificate with thumbprint {certThumbprint} was not found");
