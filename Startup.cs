@@ -80,7 +80,7 @@ namespace IdentityServerKoenigsleiten
                                                 certThumbprint,
                                                 false);
                     // Get the first cert with the thumbprint
-                    certificate = certCollection.OfType<X509Certificate2>().FirstOrDefault();
+                    certificate = certCollection[0];
 
                     if (certificate is null)
                         throw new Exception($"Certificate with thumbprint {certThumbprint} was not found");
