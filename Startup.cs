@@ -64,26 +64,30 @@ namespace IdentityServerKoenigsleiten
             });
 
             X509Certificate2 certificate;
-            if (_env.IsDevelopment())
+            if (false)
             {
-                var file = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
-                certificate = new X509Certificate2(file, "password");
-            }
-            else
-            {
-                using (X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+                if (_env.IsDevelopment())
                 {
-                    var certThumbprint = "FE1A8F62DAB5AB8EC767A2A70178BA790A427546";
+                    var file = Path.Combine(_env.ContentRootPath, "is_cert.pfx");
+                    certificate = new X509Certificate2(file, "password");
+                }
+                else
+                {
+                    using (X509Store certStore = new X509Store(StoreName.My, StoreLocation.CurrentUser))
+                    {
+                        var certThumbprint = "FE1A8F62DAB5AB8EC767A2A70178BA790A427546";
 
-                    X509Certificate2Collection certCollection = certStore.Certificates.Find(
-                                                X509FindType.FindByThumbprint,
-                                                certThumbprint,
-                                                false);
-                    // Get the first cert with the thumbprint
-                    certificate = certCollection.OfType<X509Certificate2>().FirstOrDefault();
+                        X509Certificate2Collection certCollection = certStore.Certificates.Find(
+                                                    X509FindType.FindByThumbprint,
+                                                    certThumbprint,
+                                                    false);
+                        // Get the first cert with the thumbprint
+                        certificate = certCollection.OfType<X509Certificate2>().FirstOrDefault();
 
-                    if (certificate is null)
-                        throw new Exception($"Certificate with thumbprint {certThumbprint} was not found");
+                        if (certificate is null)
+                            throw new Exception($"Certificate with thumbprint {certThumbprint} was not found");
+                    }
+
                 }
 
             }
@@ -104,8 +108,8 @@ namespace IdentityServerKoenigsleiten
                 })
                 .AddInMemoryApiResources(Configuration.GetApis())
                 .AddInMemoryIdentityResources(Configuration.GetIdentityResources())
-                .AddInMemoryClients(Configuration.GetClients())
-                .AddSigningCredential(certificate);
+                .AddInMemoryClients(Configuration.GetClients());
+                //.AddSigningCredential(certificate);
                 //.AddDeveloperSigningCredential();
 
             services.AddAuthentication();
